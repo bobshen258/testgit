@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>我的VUE入门</title>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<style>
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+    .class1{
+      backgroud: #444
+      color: #eee
+    }
+</style>
+</head>
+<body>
+<h1>欢迎进入 VUE 世界！</h1>
+<div id="app1">
+  <p>{{ message }}</p>
+  <br><br>
+  <label for="r1">改变颜色</label><input type="checkbox" v-model="user" id="r1" />
+  <div v-bind:class="{'class1': use}">
+     v-bind:class 指令
+  </div>
+</div>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+<script>
+new Vue({
+  el: '#app1',
+  data: {
+      message: '这是由VUE 绑定的文本插值',
+      use: true
+  }
+})
+</script>
+</body>
+</html>
